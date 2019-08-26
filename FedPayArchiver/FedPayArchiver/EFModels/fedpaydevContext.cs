@@ -27,23 +27,6 @@ namespace FedPayArchiver.EFModels
         public virtual DbSet<ArchHreceiptDetail> ArchHreceiptDetail { get; set; }
         public virtual DbSet<ArchHreceiptSummary> ArchHreceiptSummary { get; set; }
 
-        // Unable to generate entity type for table 'fedpay_arch.arch_hnear_invoice_bkup'. Please see the warning messages.
-        // Unable to generate entity type for table 'fedpay_arch.arch_hpo_summary_bkup'. Please see the warning messages.
-        // Unable to generate entity type for table 'fedpay_arch.arch_run_log'. Please see the warning messages.
-        // Unable to generate entity type for table 'fedpay_arch.archive_key'. Please see the warning messages.
-        // Unable to generate entity type for table 'fedpay_arch.arch_hpo_summary_dup'. Please see the warning messages.
-        // Unable to generate entity type for table 'fedpay_arch.arch_hadmin_diff_dup'. Please see the warning messages.
-        // Unable to generate entity type for table 'fedpay_arch.arch_hinvoice_line_item_dup'. Please see the warning messages.
-        // Unable to generate entity type for table 'fedpay_arch.arch_hinvoice_return_notice_dup'. Please see the warning messages.
-        // Unable to generate entity type for table 'fedpay_arch.arch_hinvoice_summary_dup'. Please see the warning messages.
-        // Unable to generate entity type for table 'fedpay_arch.arch_hnear_invoice_dup'. Please see the warning messages.
-        // Unable to generate entity type for table 'fedpay_arch.arch_hpo_line_item_dup'. Please see the warning messages.
-        // Unable to generate entity type for table 'fedpay_arch.arch_hpo_line_item_activity_dup'. Please see the warning messages.
-        // Unable to generate entity type for table 'fedpay_arch.arch_hpo_note_dup'. Please see the warning messages.
-        // Unable to generate entity type for table 'fedpay_arch.arch_hreceipt_activity_dup'. Please see the warning messages.
-        // Unable to generate entity type for table 'fedpay_arch.arch_hreceipt_detail_dup'. Please see the warning messages.
-        // Unable to generate entity type for table 'fedpay_arch.arch_hreceipt_summary_dup'. Please see the warning messages.
-        // Unable to generate entity type for table 'fedpay_arch.arch_hnear_invoice'. Please see the warning messages.
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
