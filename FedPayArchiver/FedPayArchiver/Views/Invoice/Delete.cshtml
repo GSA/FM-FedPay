@@ -1,0 +1,275 @@
+﻿@model FedPayArchiver.EFModels.ArchHinvoiceSummary
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ArchHinvoiceSummary</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsInvoiceNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsInvoiceNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsPoNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsPoNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsVendorNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsVendorNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsScheduleNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsScheduleNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsScheduleCheckSeq)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsScheduleCheckSeq)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsCheckNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsCheckNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsCheckDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsCheckDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsBatchNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsBatchNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsSubBatchNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsSubBatchNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsSubBatchSeq)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsSubBatchSeq)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsDiscountTerms)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsDiscountTerms)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsInvoiceAmt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsInvoiceAmt)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsAmtPaid)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsAmtPaid)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsNonMerchAmt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsNonMerchAmt)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsInvoiceDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsInvoiceDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsDateReceived)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsDateReceived)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsDateKeyedIp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsDateKeyedIp)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsInitialsIp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsInitialsIp)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsDateKeyedPv)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsDateKeyedPv)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsInitialsPv)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsInitialsPv)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsRecDateReceived)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsRecDateReceived)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsFundCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsFundCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsInvoiceStatus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsInvoiceStatus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsFederalInd)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsFederalInd)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsNetDays)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsNetDays)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsAdjustInd)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsAdjustInd)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsActionCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsActionCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsInterestCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsInterestCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsInterestAmt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsInterestAmt)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsDiscountELCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsDiscountELCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsDiscountELAmt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsDiscountELAmt)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsAdminDiffAmt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsAdminDiffAmt)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsScheduleDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsScheduleDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsDocumentNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsDocumentNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsTreasMonth)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsTreasMonth)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsFssPoNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsFssPoNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsInternetInd)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsInternetInd)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsPegDocNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsPegDocNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsInitTimestamp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsInitTimestamp)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsSourceFile)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsSourceFile)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsCycleNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsCycleNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HinsDeleteDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HinsDeleteDate)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="HinsId" />
+        <input type="hidden" asp-for="HinsPoId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

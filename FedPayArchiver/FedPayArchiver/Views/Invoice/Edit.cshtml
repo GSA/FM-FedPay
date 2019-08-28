@@ -1,0 +1,241 @@
+﻿@model FedPayArchiver.EFModels.ArchHinvoiceSummary
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<h4>ArchHinvoiceSummary</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="HinsInvoiceNo" class="control-label"></label>
+                <input asp-for="HinsInvoiceNo" class="form-control" />
+                <span asp-validation-for="HinsInvoiceNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsPoNo" class="control-label"></label>
+                <input asp-for="HinsPoNo" class="form-control" />
+                <span asp-validation-for="HinsPoNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsVendorNo" class="control-label"></label>
+                <input asp-for="HinsVendorNo" class="form-control" />
+                <span asp-validation-for="HinsVendorNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsScheduleNo" class="control-label"></label>
+                <input asp-for="HinsScheduleNo" class="form-control" />
+                <span asp-validation-for="HinsScheduleNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsScheduleCheckSeq" class="control-label"></label>
+                <input asp-for="HinsScheduleCheckSeq" class="form-control" />
+                <span asp-validation-for="HinsScheduleCheckSeq" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsCheckNo" class="control-label"></label>
+                <input asp-for="HinsCheckNo" class="form-control" />
+                <span asp-validation-for="HinsCheckNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsCheckDate" class="control-label"></label>
+                <input asp-for="HinsCheckDate" class="form-control" />
+                <span asp-validation-for="HinsCheckDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsBatchNo" class="control-label"></label>
+                <input asp-for="HinsBatchNo" class="form-control" />
+                <span asp-validation-for="HinsBatchNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsSubBatchNo" class="control-label"></label>
+                <input asp-for="HinsSubBatchNo" class="form-control" />
+                <span asp-validation-for="HinsSubBatchNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsSubBatchSeq" class="control-label"></label>
+                <input asp-for="HinsSubBatchSeq" class="form-control" />
+                <span asp-validation-for="HinsSubBatchSeq" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsDiscountTerms" class="control-label"></label>
+                <input asp-for="HinsDiscountTerms" class="form-control" />
+                <span asp-validation-for="HinsDiscountTerms" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsInvoiceAmt" class="control-label"></label>
+                <input asp-for="HinsInvoiceAmt" class="form-control" />
+                <span asp-validation-for="HinsInvoiceAmt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsAmtPaid" class="control-label"></label>
+                <input asp-for="HinsAmtPaid" class="form-control" />
+                <span asp-validation-for="HinsAmtPaid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsNonMerchAmt" class="control-label"></label>
+                <input asp-for="HinsNonMerchAmt" class="form-control" />
+                <span asp-validation-for="HinsNonMerchAmt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsInvoiceDate" class="control-label"></label>
+                <input asp-for="HinsInvoiceDate" class="form-control" />
+                <span asp-validation-for="HinsInvoiceDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsDateReceived" class="control-label"></label>
+                <input asp-for="HinsDateReceived" class="form-control" />
+                <span asp-validation-for="HinsDateReceived" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsDateKeyedIp" class="control-label"></label>
+                <input asp-for="HinsDateKeyedIp" class="form-control" />
+                <span asp-validation-for="HinsDateKeyedIp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsInitialsIp" class="control-label"></label>
+                <input asp-for="HinsInitialsIp" class="form-control" />
+                <span asp-validation-for="HinsInitialsIp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsDateKeyedPv" class="control-label"></label>
+                <input asp-for="HinsDateKeyedPv" class="form-control" />
+                <span asp-validation-for="HinsDateKeyedPv" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsInitialsPv" class="control-label"></label>
+                <input asp-for="HinsInitialsPv" class="form-control" />
+                <span asp-validation-for="HinsInitialsPv" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsRecDateReceived" class="control-label"></label>
+                <input asp-for="HinsRecDateReceived" class="form-control" />
+                <span asp-validation-for="HinsRecDateReceived" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsFundCode" class="control-label"></label>
+                <input asp-for="HinsFundCode" class="form-control" />
+                <span asp-validation-for="HinsFundCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsInvoiceStatus" class="control-label"></label>
+                <input asp-for="HinsInvoiceStatus" class="form-control" />
+                <span asp-validation-for="HinsInvoiceStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsFederalInd" class="control-label"></label>
+                <input asp-for="HinsFederalInd" class="form-control" />
+                <span asp-validation-for="HinsFederalInd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsNetDays" class="control-label"></label>
+                <input asp-for="HinsNetDays" class="form-control" />
+                <span asp-validation-for="HinsNetDays" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsAdjustInd" class="control-label"></label>
+                <input asp-for="HinsAdjustInd" class="form-control" />
+                <span asp-validation-for="HinsAdjustInd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsActionCode" class="control-label"></label>
+                <input asp-for="HinsActionCode" class="form-control" />
+                <span asp-validation-for="HinsActionCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsInterestCode" class="control-label"></label>
+                <input asp-for="HinsInterestCode" class="form-control" />
+                <span asp-validation-for="HinsInterestCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsInterestAmt" class="control-label"></label>
+                <input asp-for="HinsInterestAmt" class="form-control" />
+                <span asp-validation-for="HinsInterestAmt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsDiscountELCode" class="control-label"></label>
+                <input asp-for="HinsDiscountELCode" class="form-control" />
+                <span asp-validation-for="HinsDiscountELCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsDiscountELAmt" class="control-label"></label>
+                <input asp-for="HinsDiscountELAmt" class="form-control" />
+                <span asp-validation-for="HinsDiscountELAmt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsAdminDiffAmt" class="control-label"></label>
+                <input asp-for="HinsAdminDiffAmt" class="form-control" />
+                <span asp-validation-for="HinsAdminDiffAmt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsScheduleDate" class="control-label"></label>
+                <input asp-for="HinsScheduleDate" class="form-control" />
+                <span asp-validation-for="HinsScheduleDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsDocumentNo" class="control-label"></label>
+                <input asp-for="HinsDocumentNo" class="form-control" />
+                <span asp-validation-for="HinsDocumentNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsTreasMonth" class="control-label"></label>
+                <input asp-for="HinsTreasMonth" class="form-control" />
+                <span asp-validation-for="HinsTreasMonth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsFssPoNo" class="control-label"></label>
+                <input asp-for="HinsFssPoNo" class="form-control" />
+                <span asp-validation-for="HinsFssPoNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsInternetInd" class="control-label"></label>
+                <input asp-for="HinsInternetInd" class="form-control" />
+                <span asp-validation-for="HinsInternetInd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsPegDocNo" class="control-label"></label>
+                <input asp-for="HinsPegDocNo" class="form-control" />
+                <span asp-validation-for="HinsPegDocNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsInitTimestamp" class="control-label"></label>
+                <input asp-for="HinsInitTimestamp" class="form-control" />
+                <span asp-validation-for="HinsInitTimestamp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsSourceFile" class="control-label"></label>
+                <input asp-for="HinsSourceFile" class="form-control" />
+                <span asp-validation-for="HinsSourceFile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsCycleNo" class="control-label"></label>
+                <input asp-for="HinsCycleNo" class="form-control" />
+                <span asp-validation-for="HinsCycleNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HinsDeleteDate" class="control-label"></label>
+                <input asp-for="HinsDeleteDate" class="form-control" />
+                <span asp-validation-for="HinsDeleteDate" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="HinsId" />
+            <input type="hidden" asp-for="HinsPoId" />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

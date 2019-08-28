@@ -1,0 +1,282 @@
+﻿@model IEnumerable<FedPayArchiver.EFModels.ArchHinvoiceSummary>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsInvoiceNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsPoNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsVendorNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsScheduleNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsScheduleCheckSeq)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsCheckNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsCheckDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsBatchNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsSubBatchNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsSubBatchSeq)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsDiscountTerms)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsInvoiceAmt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsAmtPaid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsNonMerchAmt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsInvoiceDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsDateReceived)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsDateKeyedIp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsInitialsIp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsDateKeyedPv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsInitialsPv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsRecDateReceived)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsFundCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsInvoiceStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsFederalInd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsNetDays)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsAdjustInd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsActionCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsInterestCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsInterestAmt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsDiscountELCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsDiscountELAmt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsAdminDiffAmt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsScheduleDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsDocumentNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsTreasMonth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsFssPoNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsInternetInd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsPegDocNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsInitTimestamp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsSourceFile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsCycleNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinsDeleteDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsInvoiceNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsPoNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsVendorNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsScheduleNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsScheduleCheckSeq)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsCheckNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsCheckDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsBatchNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsSubBatchNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsSubBatchSeq)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsDiscountTerms)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsInvoiceAmt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsAmtPaid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsNonMerchAmt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsInvoiceDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsDateReceived)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsDateKeyedIp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsInitialsIp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsDateKeyedPv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsInitialsPv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsRecDateReceived)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsFundCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsInvoiceStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsFederalInd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsNetDays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsAdjustInd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsActionCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsInterestCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsInterestAmt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsDiscountELCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsDiscountELAmt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsAdminDiffAmt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsScheduleDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsDocumentNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsTreasMonth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsFssPoNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsInternetInd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsPegDocNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsInitTimestamp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsSourceFile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsCycleNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinsDeleteDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
