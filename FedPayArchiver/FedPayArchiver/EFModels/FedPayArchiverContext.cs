@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace FedPayArchiver.EFModels
 {
-    public partial class fedpayArhiverContext : DbContext
+    public partial class FedPayArchiverContext : DbContext
     {
-        public fedpayArhiverContext()
+        public FedPayArchiverContext()
         {
         }
 
-        public fedpayArhiverContext(DbContextOptions<fedpayArhiverContext> options)
+        public FedPayArchiverContext(DbContextOptions<FedPayArchiverContext> options)
             : base(options)
         {
         }

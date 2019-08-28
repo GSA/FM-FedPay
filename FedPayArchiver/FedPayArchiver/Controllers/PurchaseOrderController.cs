@@ -1,14 +1,10 @@
-﻿using System;
+﻿using FedPayArchiver.EFModels;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Localization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Localization;
-using Microsoft.EntityFrameworkCore;
-using FedPayArchiver.Models;
-using FedPayArchiver.EFModels;
-using Microsoft.AspNetCore.Http;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -16,9 +12,9 @@ namespace FedPayArchiver.Controllers
 {
     public class PurchaseOrderController : Controller
     {
-        private readonly fedpayArhiverContext _context;
+        private readonly FedPayArchiverContext _context;
 
-        public PurchaseOrderController(fedpayArhiverContext context)
+        public PurchaseOrderController(FedPayArchiverContext context)
         {
             _context = context;
         }

@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
+using FedPayArchiver;
 
 namespace FedPayArchiver
 {
@@ -39,6 +40,13 @@ namespace FedPayArchiver
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
                 .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix);
+
+            var connectionString = Configuration["ConnectionString:FedPay"];
+
+            services.AddDbContext<EFModels.FedPayArchiverContext>(
+            opts => opts.UseNpgsql(connectionString));
+
+
 
 
         }
