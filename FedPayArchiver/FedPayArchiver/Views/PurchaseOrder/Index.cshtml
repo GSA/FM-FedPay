@@ -1,0 +1,57 @@
+﻿@model IEnumerable<FedPayArchiver.EFModels.ArchHpoSummary>
+@{
+    ViewData["Title"] = "Purhcase Orders Meeting Criteria entered:";
+}
+
+
+<h2>Purchase Order Results</h2> <br />
+<right>
+    <bold>
+        <font color=#00b300 size=+2>
+            Search Criteria   <br />
+            @ViewBag.SearchCriteria
+        </font><br>
+        <font color=#ff3333 size=+2>
+            @ViewBag.SearchRes
+        </font><br>
+    </bold>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.Hpos)*@
+                    FEDPAY PO#
+                </th>
+                <th>
+                    FAS PO#
+                </th>
+                <th>
+                    Date of Order
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HposPoNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HposFssPoNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HposDateOfOrder)
+                </td>
+                @*<td>
+                    <a asp-action="Details"   
+                    asp-route-po="@item.ADD_PO_NO"  asp-route-inv="@item.ADD_INVOICE_NO" 
+                    asp-route-seq="@item.ADD_SEQ_NO" asp-route-stype="@ViewBag.IndxSType">Details</a> 
+                </td>*@
+
+            </tr>
+            }
+        </tbody>
+    </table>
+
+    @Html.ActionLink("NEW SEARCH", "PARAM", new { /* go back to get new search criteria */ })

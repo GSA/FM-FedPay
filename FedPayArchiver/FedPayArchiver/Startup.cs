@@ -9,6 +9,10 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc.Razor;
+using FedPayArchiver;
 
 namespace FedPayArchiver
 {
@@ -31,8 +35,20 @@ namespace FedPayArchiver
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            // Add the localization services to the services container
+            services.AddLocalization(options => options.ResourcesPath = "Resources");
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix);
+
+            var connectionString = Configuration["ConnectionString:FedPay"];
+
+            services.AddDbContext<EFModels.FedPayArchiverContext>(
+            opts => opts.UseNpgsql(connectionString));
+
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
