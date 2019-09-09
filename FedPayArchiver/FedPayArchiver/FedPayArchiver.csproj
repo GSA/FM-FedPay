@@ -12,6 +12,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Views\PurchaseOrder\POA.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\PurchaseOrder\PON.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\PurchaseOrder\POL.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Views\PurchaseOrder\Index.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>

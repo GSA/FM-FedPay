@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
 
 namespace FedPayArchiver.EFModels
 {
@@ -8,6 +11,8 @@ namespace FedPayArchiver.EFModels
         public string HposPoNo { get; set; }
         public string HposVendorNo { get; set; }
         public string HposContrNo { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:d}")]
         public DateTime? HposDateOfOrder { get; set; }
         public string HposFobInd { get; set; }
         public string HposDiscountTerms { get; set; }

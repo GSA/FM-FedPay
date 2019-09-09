@@ -90,5 +90,40 @@ namespace FedPayArchiver.Controllers
 
 
         }
+        public async Task<IActionResult> POL (string poid,DateTime OrderDate)
+        {
+
+
+                List<ArchHpoLineItem> hPol = await _context.ArchHpoLineItem.Where(hPoltab => hPoltab.HpolPoId == poid).
+                    OrderByDescending(hPoltab => hPoltab.HpolSeqNo).ToListAsync();
+
+            ViewBag.OrdDt = OrderDate;
+
+            return View(hPol);
+        }
+
+        public async Task<IActionResult> POA(string poid, DateTime OrderDate)
+        {
+            //There are 2 possible areas to look first in the HPOA table and second place to pull information is from HINL (only pull from HINL if not in HPOA)
+
+            List<ArchHpoLineItemActivity> hPoa = await _context.ArchHpoLineItemActivity.Where(hPoatab => hPoatab.HpoaPoId == poid).
+                OrderBy(hPoatab => hPoatab.HpoaPolSeqNo).OrderBy(hPoatab => hPoatab.HpoaSeqNo).ToListAsync();
+
+            ViewBag.OrdDt = OrderDate;
+
+            return View(hPoa);
+        }
+
+        public async Task<IActionResult> PON(string poid, DateTime OrderDate)
+        {
+
+
+            List<ArchHpoNote> hPon = await _context.ArchHpoNote.Where(hPontab => hPontab.HponPoId == poid).
+                OrderBy(hPontab => hPontab.HponSeqNo).ToListAsync();
+
+            ViewBag.OrdDt = OrderDate;
+
+            return View(hPon);
+        }
     }
 }

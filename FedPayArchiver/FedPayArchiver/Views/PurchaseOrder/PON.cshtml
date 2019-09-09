@@ -1,13 +1,13 @@
-﻿@model IEnumerable<FedPayArchiver.EFModels.ArchHpoSummary>
+﻿@model IEnumerable<FedPayArchiver.EFModels.ArchHpoNote>
 
 @{
     Layout = null;
 }
 
 @{
-    ViewData["Title"] = "Purhcase Orders Meeting Criteria entered:";
+    ViewData["Title"] = "PO Line Items";
 }
-<h2>Purchase Order Results</h2>
+<h2>Purchase Order Notes</h2>
 <br />
 <right>
     <bold>
@@ -23,7 +23,6 @@
         <thead>
             <tr>
                 <th>
-                    @*@Html.DisplayNameFor(model => model.Hpos)*@
                     FEDPAY PO#
                 </th>
                 <th>
@@ -33,13 +32,10 @@
                     Date of Order
                 </th>
                 <th>
-                    PO Line Items
+                    LINE SEQ#
                 </th>
                 <th>
-                    PO Line Item Activity
-                </th>
-                <th>
-                    PO Note
+                    Note
                 </th>
             </tr>
         </thead>
@@ -48,27 +44,20 @@
             {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.HposPoNo)
+                    @Html.DisplayFor(modelItem => item.HponPoNo)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.HposFssPoNo)
+                    @Html.DisplayFor(modelItem => item.HponFssPoNo)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.HposDateOfOrder)
+                    @ViewBag.OrdDt
                 </td>
                 <td>
-                    <a asp-action="POL"
-                       asp-route-poid="@item.HposPoId" asp-route-OrderDate="@item.HposDateOfOrder">View</a>
+                    @Html.DisplayFor(modelItem => item.HponSeqNo)
                 </td>
                 <td>
-                    <a asp-action="POA"
-                       asp-route-poid="@item.HposPoId" asp-route-OrderDate="@item.HposDateOfOrder">View</a>
+                    @Html.DisplayFor(modelItem => item.HponNoteAddendums)
                 </td>
-                <td>
-                    <a asp-action="PON"
-                       asp-route-poid="@item.HposPoId" asp-route-OrderDate="@item.HposDateOfOrder">View</a>
-                </td>
-
             </tr>
             }
         </tbody>
