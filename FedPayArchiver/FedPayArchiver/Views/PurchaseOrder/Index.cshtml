@@ -58,11 +58,11 @@
                 </td>
                 <td>
                     <a asp-action="POL"
-                       asp-route-poid="@item.HposPoId" asp-route-OrderDate="@item.HposDateOfOrder">View</a>
+                       asp-route-poid="@item.HposPoId" asp-route-OrderDate="@item.HposDateOfOrder" asp-route-SrchCriteria="@ViewBag.SearchCriteria">View</a>
                 </td>
                 <td>
                     <a asp-action="POA"
-                       asp-route-poid="@item.HposPoId" asp-route-OrderDate="@item.HposDateOfOrder">View</a>
+                       asp-route-poid="@item.HposPoId" asp-route-OrderDate="@item.HposDateOfOrder" >View</a>
                 </td>
                 <td>
                     <a asp-action="PON"

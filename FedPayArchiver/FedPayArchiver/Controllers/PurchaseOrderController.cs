@@ -90,7 +90,7 @@ namespace FedPayArchiver.Controllers
 
 
         }
-        public async Task<IActionResult> POL (string poid,DateTime OrderDate)
+        public async Task<IActionResult> POL (string poid,DateTime OrderDate,string SrchCriteria)
         {
 
 
@@ -98,6 +98,7 @@ namespace FedPayArchiver.Controllers
                     OrderByDescending(hPoltab => hPoltab.HpolSeqNo).ToListAsync();
 
             ViewBag.OrdDt = OrderDate;
+            ViewBag.SearchCriteria = SrchCriteria;
 
             return View(hPol);
         }
@@ -105,14 +106,48 @@ namespace FedPayArchiver.Controllers
         public async Task<IActionResult> POA(string poid, DateTime OrderDate)
         {
             //There are 2 possible areas to look first in the HPOA table and second place to pull information is from HINL (only pull from HINL if not in HPOA)
-
+            // Selecting from area #1  HPOA
             List<ArchHpoLineItemActivity> hPoa = await _context.ArchHpoLineItemActivity.Where(hPoatab => hPoatab.HpoaPoId == poid).
                 OrderBy(hPoatab => hPoatab.HpoaPolSeqNo).OrderBy(hPoatab => hPoatab.HpoaSeqNo).ToListAsync();
 
+            if (hPoa.Count == 0)
+            {
+                // Look at area #2
+                LineItemActivity lia = new LineItemActivity();
+                lia.PoId = poid;
+                lia.SrchCriteria = ViewBag.SearchCriteria;
+                lia.OrdDate = OrderDate;
+                ViewBag.an = "POA2";
+                ViewBag.cn = "PurchaseOrderController";
+
+                //return RedirectToAction(ViewBag.an, ViewBag.cn, lia); 
+                return RedirectToAction(ViewBag.an, lia);
+            }
+            else
+            { 
+                ViewBag.OrdDt = OrderDate;
+
+                return View(hPoa);
+            }
+        }
+
+        public async Task<IActionResult> POA2(string poid, DateTime OrderDate, LineItemActivity lia)
+        {
+            //Selecting from area #2  HINL (only pull from HINL if not in HPOA)
+
+            List<ArchHinvoiceLineItem> hInl = await _context.ArchHinvoiceLineItem.Where(hInltab => hInltab.HinlPoId == lia.PoId).
+                OrderBy(hInltab => hInltab.HinlSeqNo).OrderBy(hInltab => hInltab.HinlPolSeqNo).ToListAsync();
+            if (hInl.Count == 0)
+            {
+                ViewBag.SearchRes = "Please Click New Search and enter one search criteria";
+            }
+
             ViewBag.OrdDt = OrderDate;
 
-            return View(hPoa);
+            return View(hInl);
+
         }
+
 
         public async Task<IActionResult> PON(string poid, DateTime OrderDate)
         {
@@ -125,5 +160,12 @@ namespace FedPayArchiver.Controllers
 
             return View(hPon);
         }
+    }
+
+    public class LineItemActivity
+    {
+        public string PoId { get; set; }
+        public string SrchCriteria { get; set; }
+        public DateTime OrdDate { get; set; }
     }
 }

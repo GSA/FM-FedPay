@@ -12,6 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Views\PurchaseOrder\POA2.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Views\PurchaseOrder\POA.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
