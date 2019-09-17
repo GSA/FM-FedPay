@@ -100,4 +100,7 @@
             }
         </tbody>
     </table>
-    @Html.ActionLink("NEW SEARCH", "PARAM", new { /* go back to get new search criteria */ })
+    <div>
+        <a asp-action="Index" asp-route-pos="@ViewBag.IndxPO" asp-route-faspo="@ViewBag.IndxFASPO">PO List</a>  &nbsp;
+        @Html.ActionLink("NEW SEARCH", "PARAM", new { /* go back to get new search criteria */ })
+    </div>

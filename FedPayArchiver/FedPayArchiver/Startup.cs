@@ -46,7 +46,13 @@ namespace FedPayArchiver
             services.AddDbContext<EFModels.FedPayArchiverContext>(
             opts => opts.UseNpgsql(connectionString));
 
-
+            // session variables
+            //services.AddDistributedMemoryCache();
+            //services.AddSession(options =>
+            //{
+            //    options.IdleTimeout = TimeSpan.FromMinutes(15);
+            //    options.Cookie.HttpOnly = true;
+            //});
 
 
         }
@@ -67,6 +73,8 @@ namespace FedPayArchiver
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            //Session variables
+            //app.UseSession();
 
             app.UseMvc(routes =>
             {

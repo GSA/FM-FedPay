@@ -19,7 +19,7 @@
             @ViewBag.SearchRes
         </font><br>
     </bold>
-    <table class="table"style="width:50%"border="1">
+    <table class="table" style="width:50%" border="1">
         <thead>
             <tr>
                 <th>
@@ -61,44 +61,47 @@
         <tbody>
             @foreach (var item in Model)
             {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HpoaPoNo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HpoaFssPoNo)
-                </td>
-                <td>
-                    @ViewBag.OrdDt
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HpoaPolSeqNo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HpoaSeqNo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HpoaTypeAction)
-                </td>
-                <td>
-                    @*This needs to be either the Paid Qty or the Delete QTY depending on Action type*@
-                    @Html.DisplayFor(modelItem => item.HpoaPaidQty)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HpoaInvoiceNo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HpoaPaidDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HpoaPaidUcp)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HpoaBilledUsp)
-                </td>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HpoaPoNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HpoaFssPoNo)
+                    </td>
+                    <td>
+                        @ViewBag.OrdDt
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HpoaPolSeqNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HpoaSeqNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HpoaTypeAction)
+                    </td>
+                    <td>
+                        @*This needs to be either the Paid Qty or the Delete QTY depending on Action type*@
+                        @Html.DisplayFor(modelItem => item.HpoaPaidQty)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HpoaInvoiceNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HpoaPaidDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HpoaPaidUcp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HpoaBilledUsp)
+                    </td>
 
-            </tr>
+                </tr>
             }
         </tbody>
     </table>
-    @Html.ActionLink("NEW SEARCH", "PARAM", new { /* go back to get new search criteria */ })
+    <div>
+        <a asp-action="Index" asp-route-pos="@ViewBag.IndxPO" asp-route-faspo="@ViewBag.IndxFASPO">PO List</a>  &nbsp;
+        @Html.ActionLink("NEW SEARCH", "PARAM", new { /* go back to get new search criteria */ })
+    </div>

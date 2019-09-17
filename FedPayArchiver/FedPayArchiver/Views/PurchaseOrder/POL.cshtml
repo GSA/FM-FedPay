@@ -3,36 +3,41 @@
 @{
     Layout = null;
 }
+<!DOCTYPE html>
 
-@{
-    ViewData["Title"] = "PO Line Items";
-}
-<h2>Purchase Order Results</h2>
-<br />
+<html>
+<body>
+    @{
+        ViewData["Title"] = "PO Line Items";
+    }
+    <h2>
+        Purchase Order Line Items       
+    </h2>
+    <br />
     <bold>
         <font color=#00b300 size=+2>
             Search Criteria   <br />
-            @ViewBag.SearchCriteria
+            @ViewBag.SearchCriteria <br />
         </font><br>
         <font color=#ff3333 size=+2>
             @ViewBag.SearchRes
         </font><br>
     </bold>
-    <table class="table"style="width:50%"border="1">
+    <table class="table" style="width:50%" border="1">
         <thead>
             <tr>
                 <th>
                     @*@Html.DisplayNameFor(model => model.Hpos)*@
-                      FEDPAY PO# 
+                    FEDPAY PO#
                 </th>
                 <th>
-                     FAS PO# 
+                    FAS PO#
                 </th>
                 <th>
-                     Date of Order 
+                    Date of Order
                 </th>
                 <th>
-                     SEQ#
+                    SEQ#
                 </th>
                 <th>
                     REQ#
@@ -46,28 +51,42 @@
         <tbody>
             @foreach (var item in Model)
             {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HpolPoNo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HpolFssPoNo)
-                </td>
-                <td>
-                    @ViewBag.OrdDt
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HpolSeqNo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HpolReqNo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HpolStockNo)
-                </td>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HpolPoNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HpolFssPoNo)
+                    </td>
+                    <td>
+                        @ViewBag.OrdDt
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HpolSeqNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HpolReqNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HpolStockNo)
+                    </td>
 
-            </tr>
+                </tr>
             }
         </tbody>
     </table>
-    @Html.ActionLink("NEW SEARCH", "PARAM", new { /* go back to get new search criteria */ })
+    <div>
+        <a asp-action="Index" 
+           asp-route-pos="@ViewBag.FPno"
+           asp-route-faspo="@ViewBag.FASno">PO List</a>  &nbsp;
+        <a asp-action="PON"
+           asp-route-poid="@ViewBag.PoId" 
+           asp-route-OrderDate="@ViewBag.OrdDt" 
+           asp-route-SrchCriteria="@ViewBag.SearchCriteria"
+           asp-route-fpo="@ViewBag.FPno"
+           asp-route-faspo="@ViewBag.FASno">PO Notes</a>  &nbsp;
+
+    </div>
+</body>
+</html>
+@Html.ActionLink("NEW SEARCH", "PARAM", new { /* go back to get new search criteria */ })
