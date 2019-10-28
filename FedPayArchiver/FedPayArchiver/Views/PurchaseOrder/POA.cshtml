@@ -5,7 +5,7 @@
 }
 
 @{
-    ViewData["Title"] = "PO Line Items";
+    ViewData["Title"] = "PO Line Activity";
 }
 <h2>Purchase Order Results</h2>
 <br />
@@ -102,6 +102,23 @@
         </tbody>
     </table>
     <div>
-        <a asp-action="Index" asp-route-pos="@ViewBag.IndxPO" asp-route-faspo="@ViewBag.IndxFASPO">PO List</a>  &nbsp;
-        @Html.ActionLink("NEW SEARCH", "PARAM", new { /* go back to get new search criteria */ })
+        <a asp-action="Index"
+           asp-route-pos="@ViewBag.FPno"
+           asp-route-faspo="@ViewBag.FASno">PO List</a>  &nbsp;
+
+        <a asp-action="POL"
+           asp-route-poid="@ViewBag.PoId"
+           asp-route-OrderDate="@ViewBag.OrdDt"
+           asp-route-SrchCriteria="@ViewBag.SearchCriteria"
+           asp-route-fpo="@ViewBag.FPno"
+           asp-route-faspo="@ViewBag.FASno">PO Line</a>  &nbsp;
+
+        <a asp-action="PON"
+           asp-route-poid="@ViewBag.PoId"
+           asp-route-OrderDate="@ViewBag.OrdDt"
+           asp-route-SrchCriteria="@ViewBag.SearchCriteria"
+           asp-route-fpo="@ViewBag.FPno"
+           asp-route-faspo="@ViewBag.FASno">PO Notes</a>  &nbsp;
     </div>
+
+    @Html.ActionLink("NEW SEARCH", "PARAM", new { /* go back to get new search criteria */ })

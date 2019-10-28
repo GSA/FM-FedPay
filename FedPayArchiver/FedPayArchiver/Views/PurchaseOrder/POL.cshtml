@@ -7,6 +7,7 @@
 
 <html>
 <body>
+<div.body-content>
     @{
         ViewData["Title"] = "PO Line Items";
     }
@@ -45,48 +46,97 @@
                 <th>
                     STOCK#
                 </th>
-
+                <th>
+                    Orig QTY
+                </th>
+                <th>
+                    Open QTY
+                </th>
+                <th>
+                    UI
+                </th>
+                <th>
+                    UCP
+                </th>
+                <th>
+                    USP
+                </th>
+                <th>
+                    SUPP ADDR
+                </th>
+                <th>
+                    CC
+                </th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.HpolPoNo)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.HpolFssPoNo)
-                    </td>
-                    <td>
-                        @ViewBag.OrdDt
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.HpolSeqNo)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.HpolReqNo)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.HpolStockNo)
-                    </td>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HpolPoNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HpolFssPoNo)
+                </td>
+                <td>
+                    @ViewBag.OrdDt.ToString("MM/dd/yyyy")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HpolSeqNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HpolReqNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HpolStockNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HpolQty)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HpolQtyAvailable)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HpolUnitOfIssue)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HpolUcp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HpolUsp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HpolSupplAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HpolSpecialRate)
+                </td>
 
-                </tr>
+            </tr>
             }
         </tbody>
     </table>
     <div>
-        <a asp-action="Index" 
+        <a asp-action="Index"
            asp-route-pos="@ViewBag.FPno"
            asp-route-faspo="@ViewBag.FASno">PO List</a>  &nbsp;
+
+        <a asp-action="POA"
+           asp-route-poid="@ViewBag.PoId"
+           asp-route-OrderDate="@ViewBag.OrdDt"
+           asp-route-SrchCriteria="@ViewBag.SearchCriteria"
+           asp-route-fpo="@ViewBag.FPno"
+           asp-route-faspo="@ViewBag.FASno">PO Activity</a>  &nbsp;
+
         <a asp-action="PON"
-           asp-route-poid="@ViewBag.PoId" 
-           asp-route-OrderDate="@ViewBag.OrdDt" 
+           asp-route-poid="@ViewBag.PoId"
+           asp-route-OrderDate="@ViewBag.OrdDt"
            asp-route-SrchCriteria="@ViewBag.SearchCriteria"
            asp-route-fpo="@ViewBag.FPno"
            asp-route-faspo="@ViewBag.FASno">PO Notes</a>  &nbsp;
-
     </div>
+</div.body-content>
 </body>
 </html>
 @Html.ActionLink("NEW SEARCH", "PARAM", new { /* go back to get new search criteria */ })

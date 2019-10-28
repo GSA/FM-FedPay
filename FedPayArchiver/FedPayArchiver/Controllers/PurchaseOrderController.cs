@@ -132,6 +132,8 @@ namespace FedPayArchiver.Controllers
                 lia.PoId = poid;
                 lia.SrchCriteria = ViewBag.SearchCriteria;
                 lia.OrdDate = OrderDate;
+                lia.fpo = fpo;
+                lia.faspo = faspo;
                 ViewBag.an = "POA2";   //Action Name
                 ViewBag.cn = "PurchaseOrderController";   //Controller Name
 
@@ -139,7 +141,8 @@ namespace FedPayArchiver.Controllers
                 return RedirectToAction(ViewBag.an, lia);
             }
             else
-            { 
+            {
+                ViewBag.PoId = poid;
                 ViewBag.FPno = fpo;
                 ViewBag.FASno = faspo;
                 ViewBag.OrdDt = OrderDate;
@@ -149,7 +152,7 @@ namespace FedPayArchiver.Controllers
             }
         }
 
-        public async Task<IActionResult> POA2(string poid, DateTime OrderDate, LineItemActivity lia)
+        public async Task<IActionResult> POA2(LineItemActivity lia)
         {
             //ViewBag.IndxPO = HttpContext.Session.GetString(SessionKeyPO);
             //ViewBag.IndxFASPO = HttpContext.Session.GetString(SessionKeyFASPO);
@@ -163,7 +166,12 @@ namespace FedPayArchiver.Controllers
                 ViewBag.SearchRes = "Please Click New Search and enter one search criteria";
             }
 
-            ViewBag.OrdDt = OrderDate;
+            ViewBag.PoId = lia.PoId;
+            ViewBag.FPno = lia.fpo;
+            ViewBag.FASno = lia.faspo;
+            ViewBag.OrdDt = lia.OrdDate;
+            ViewBag.SearchCriteria = lia.SrchCriteria;
+
 
             return View(hInl);
 
@@ -191,5 +199,7 @@ namespace FedPayArchiver.Controllers
         public string PoId { get; set; }
         public string SrchCriteria { get; set; }
         public DateTime OrdDate { get; set; }
+        public string fpo { get; set; }
+        public string faspo { get; set; }
     }
 }

@@ -19,7 +19,7 @@
             @ViewBag.SearchRes
         </font><br>
     </bold>
-    <table class="table"style="width:50%"border="1">
+    <table class="table" style="width:50%" border="1">
         <thead>
             <tr>
                 <th>
@@ -61,46 +61,64 @@
         <tbody>
             @foreach (var item in Model)
             {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HinlPoNo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HinlFssPoNo)
-                </td>
-                <td>
-                    @ViewBag.OrdDt
-                </td>
-                <td>
-                    N/A 
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HinlPolSeqNo)
-                </td>
-                <td>
-                    F
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HinlDisbursedQty)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HinlInvoiceNo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HinlInitTimestamp)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HinlDisbursedUcp)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HinlDisbursedUsp)
-                </td>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HinlPoNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HinlFssPoNo)
+                    </td>
+                    <td>
+                        @ViewBag.OrdDt
+                    </td>
+                    <td>
+                        N/A
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HinlPolSeqNo)
+                    </td>
+                    <td>
+                        F
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HinlDisbursedQty)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HinlInvoiceNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HinlInitTimestamp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HinlDisbursedUcp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HinlDisbursedUsp)
+                    </td>
 
-            </tr>
+                </tr>
             }
         </tbody>
     </table>
     <div>
-        <a asp-action="Index" asp-route-pos="@ViewBag.IndxPO" asp-route-faspo="@ViewBag.IndxFASPO">PO List</a>  &nbsp;
-        @Html.ActionLink("NEW SEARCH", "PARAM", new { /* go back to get new search criteria */ })
+        <a asp-action="Index"
+           asp-route-pos="@ViewBag.FPno"
+           asp-route-faspo="@ViewBag.FASno">PO List</a>  &nbsp;
+
+        <a asp-action="POL"
+           asp-route-poid="@ViewBag.PoId"
+           asp-route-OrderDate="@ViewBag.OrdDt"
+           asp-route-SrchCriteria="@ViewBag.SearchCriteria"
+           asp-route-fpo="@ViewBag.FPno"
+           asp-route-faspo="@ViewBag.FASno">PO Line</a>  &nbsp;
+
+        <a asp-action="PON"
+           asp-route-poid="@ViewBag.PoId"
+           asp-route-OrderDate="@ViewBag.OrdDt"
+           asp-route-SrchCriteria="@ViewBag.SearchCriteria"
+           asp-route-fpo="@ViewBag.FPno"
+           asp-route-faspo="@ViewBag.FASno">PO Notes</a>  &nbsp;
+
     </div>
+
+    @Html.ActionLink("NEW SEARCH", "PARAM", new { /* go back to get new search criteria */ })

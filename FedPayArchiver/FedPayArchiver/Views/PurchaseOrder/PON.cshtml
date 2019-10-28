@@ -5,7 +5,7 @@
 }
 
 @{
-    ViewData["Title"] = "PO Line Items";
+    ViewData["Title"] = "PO Notes";
 }
 <h2>Purchase Order Notes</h2>
 <br />
@@ -19,7 +19,7 @@
             @ViewBag.SearchRes
         </font><br>
     </bold>
-    <table class="table"style="width:50%"border="1">
+    <table class="table" style="width:50%" border="1">
         <thead>
             <tr>
                 <th>
@@ -42,24 +42,44 @@
         <tbody>
             @foreach (var item in Model)
             {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HponPoNo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HponFssPoNo)
-                </td>
-                <td>
-                    @ViewBag.OrdDt
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HponSeqNo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HponNoteAddendums)
-                </td>
-            </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HponPoNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HponFssPoNo)
+                    </td>
+                    <td>
+                        @ViewBag.OrdDt
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HponSeqNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HponNoteAddendums)
+                    </td>
+                </tr>
             }
         </tbody>
     </table>
+    <div>
+        <a asp-action="Index"
+           asp-route-pos="@ViewBag.FPno"
+           asp-route-faspo="@ViewBag.FASno">PO List</a>  &nbsp;
+
+        <a asp-action="POL"
+           asp-route-poid="@ViewBag.PoId"
+           asp-route-OrderDate="@ViewBag.OrdDt"
+           asp-route-SrchCriteria="@ViewBag.SearchCriteria"
+           asp-route-fpo="@ViewBag.FPno"
+           asp-route-faspo="@ViewBag.FASno">PO Line</a>  &nbsp;
+
+        <a asp-action="POA"
+           asp-route-poid="@ViewBag.PoId"
+           asp-route-OrderDate="@ViewBag.OrdDt"
+           asp-route-SrchCriteria="@ViewBag.SearchCriteria"
+           asp-route-fpo="@ViewBag.FPno"
+           asp-route-faspo="@ViewBag.FASno">PO Activity</a>  &nbsp;
+
+    </div>
     @Html.ActionLink("NEW SEARCH", "PARAM", new { /* go back to get new search criteria */ })
